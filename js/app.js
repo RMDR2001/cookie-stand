@@ -24,3 +24,8 @@ const seatle = {
         this.cookiesEachHour = this.estimateSales(this);
     }
 }
+
+seatle.estimate();
+
+const salesSeatle = document.getElementById('salesSeatle');
+const salesDataSeatle = seatle.cookiesEachHour
