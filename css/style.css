@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+:root {
+    --salmon: #fa8072;
+}
+
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: var(--salmon);
+}
+
+.navBar {
+    background-color: var(--salmon);
+}
+
+.navBar a{
+    color: black;
 }
 
 h1 {
