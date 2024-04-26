@@ -39,7 +39,7 @@ header {
 
 .navBar li {
     display: inline-block;
-    margin-left: 20px;
+    margin: 0 0px 0 30px;
 }
 
 .navBar a{
