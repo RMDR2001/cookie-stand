@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --salmon: #fa8072;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100hv;
+}
+
+header {
+    background-color: black;
+    color: var(--salmon);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+}
+
+.title h1 {
+    font-size: 40px;
+}
+
+.navBar {
+    background-color: var(--salmon);
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.navBar li {
+    display: inline-block;
+    margin: 0 0px 0 30px;
+}
+
+.navBar a{
+    color: black;
+}
+
+main {
+    flex: 1;
+    padding: 50px;
+    padding-top: 20px;
+}
+
+main h1{
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+ul ul {
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.datosVenta {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.datosVenta ul {
+    padding-left: 30px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: rgb(199, 204, 209);
+    margin-top: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-family: "Righteous", sans-serif;
+}
+
