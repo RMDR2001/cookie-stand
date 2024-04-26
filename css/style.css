@@ -7,7 +7,6 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #fff;
-    width: 100%;
 }
 
 header {
@@ -42,6 +41,18 @@ header {
 
 .navBar a{
     color: black;
+}
+
+main {
+    padding: 50px;
+    padding-top: 20px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 h1 {
