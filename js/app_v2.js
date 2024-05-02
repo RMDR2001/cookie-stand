@@ -46,5 +46,15 @@ function Location (name, min, max, average){
 }
 
 let seattle = new Location('Seattle', 23, 65, 6.3);
+let tokyo = new Location('Tokyo', 3, 24, 1.2);
+let dubai = new Location('Dubai', 11, 38, 3.7);
+let paris = new Location('Paris', 20, 38, 2.3);
+let lima = new Location('Lima', 2, 16, 4.6);
 
-seattle.add();
+document.addEventListener("DOMContentLoaded", function() {
+    seattle.add();
+    tokyo.add();
+    dubai.add();
+    paris.add();
+    lima.add();
+});
