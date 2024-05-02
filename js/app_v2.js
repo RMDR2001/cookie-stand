@@ -6,7 +6,7 @@ function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function Location (name, min, max,average){
+function Location (name, min, max, average){
 
     this.locationName= name;
     this.minCustomerPerHour= min;
@@ -33,20 +33,18 @@ function Location (name, min, max,average){
         const nameCell = document.createElement('td');
         nameCell.textContent = this.locationName;
         row.appendChild(nameCell);
-        for (let i=0; i < this.cookiesEachHour.length; i++) {
-            const item = this.cookiesEachHour[i];
+        for (let i=0; i < this.cookiesEachHour.length; i++) {            
             const cell = document.createElement('td');
-            cell.textContent = item;
+            cell.textContent = this.cookiesEachHour[i];
             row.appendChild(cell);
         }
+        const totalCell = document.createElement('td');
+        totalCell.textContent = this.totalCookies;
+        row.appendChild(totalCell);
         sales.appendChild(row);
     }
 }
 
-seattle = new Location('Seattle', 23, 65, 6.3);
-tokyo = new Location('Tokyo', 3, 24, 1.2);
-dubai = new Location('Dubai', 11, 38, 3.7);
-paris = new Location('Paris', 20, 38, 2.3);
-lima = new Location('Lima', 2, 16, 4.6);
+let seattle = new Location('Seattle', 23, 65, 6.3);
 
 seattle.add();
