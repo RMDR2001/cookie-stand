@@ -94,6 +94,5 @@ document.addEventListener("DOMContentLoaded", function() {
     dubai.add();
     paris.add();
     lima.add();
-
     totalCookiesPerHour();
 });
