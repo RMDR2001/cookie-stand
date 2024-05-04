@@ -45,11 +45,48 @@ function Location (name, min, max, average){
     }
 }
 
+let locations = [];
+
 let seattle = new Location('Seattle', 23, 65, 6.3);
+locations.push(seattle);
 let tokyo = new Location('Tokyo', 3, 24, 1.2);
+locations.push(tokyo);
 let dubai = new Location('Dubai', 11, 38, 3.7);
+locations.push(dubai);
 let paris = new Location('Paris', 20, 38, 2.3);
+locations.push(paris);
 let lima = new Location('Lima', 2, 16, 4.6);
+locations.push(lima);
+
+function totalCookiesPerHour(){
+    let totalCookiesPerHour = new Array(14).fill(0);
+    let totalDailyCookies = 0;
+    for (let i=0; i<locations.length; i++) {
+        for (let j=0; j<locations[i].cookiesEachHour.length; j++) {
+            totalCookiesPerHour[j] += locations[i].cookiesEachHour[j];
+            totalDailyCookies += locations[i].cookiesEachHour[j];
+        }
+    }
+
+    const tfoot = document.getElementById('resumen');
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('th');
+    nameCell.textContent = "Total por hora";
+    row.appendChild(nameCell);
+    for (let i = 0; i <totalCookiesPerHour.length; i++) {
+        const cell = document.createElement('td');
+        cell.textContent = totalCookiesPerHour[i];
+        row.appendChild(cell);
+    }
+    tfoot.appendChild(row);
+
+    const totalDailyCell = document.createElement('td');
+    totalDailyCell.textContent = totalDailyCookies;
+    row.appendChild(totalDailyCell);
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     seattle.add();
@@ -57,4 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
     dubai.add();
     paris.add();
     lima.add();
+
+    totalCookiesPerHour();
 });
