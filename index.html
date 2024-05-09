@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pat's Salmon Cookies</title>
 </head>
+
 <body>
     <header>
         <section class="start">
@@ -27,56 +29,46 @@
     </header>
     <main>
         <section id="logo">
-            <img src="img/logo.png" alt="Pat's Salmon Cookies' logo">    
+            <img src="img/logo.png" alt="Pat's Salmon Cookies' logo">
         </section>
         <hr />
-        <section class="locals">
-            <ul>
-                <li id="seat">
-                    <h1>Seattle</h1>
-                </li>
-                    <ul>
-                        <li>Hours Open: 6am - 7pm </li>
-                        <li>Contact Info: 123-456-7890</li>
-                        <li>Location: 2901 3rd Ave #300, Seattle, WA 98121</li>
-                    </ul>
-                <li id="seat">
-                    <h1>Tokyo</h1>
-                </li>
-                    <ul>
-                        <li>Hours Open: 6am - 7pm</li>
-                        <li>Contact Info: 222-222-2222</li>
-                        <li>1 Chome-1-2 Oshiage, Sumida City, Tokyo 131-8634</li>
-                    </ul>
-                <li id="seat">
-                    <h1>Dubai</h1>
-                </li>
-                    <ul>
-                        <li>Hours Open: 6am - 7pm</li>
-                        <li>Contact Info: 333-333-3333</li>
-                        <li>1 Sheikh Mohammed bin Rashib Blvd - Dubai</li>
-                    </ul>
-                <li id="seat">
-                    <h1>Paris</h1>
-                </li>
-                    <ul>
-                        <li>Hours Open: 6am - 7pm</li>
-                        <li>Contact Info: 444-444-4444</li>
-                        <li>Champ de Mars, 5 Avenue Anatole France, 75007 Pari</li>
-                    </ul>
-                <li id="seat">
-                    <h1>Lima</h1>
-                </li>
-                    <ul>
-                        <li>Hours Open: 6am - 7pm</li>
-                        <li>Contact Info: 555-555-5555</li>
-                        <li>Ca. Gral. Borgoño cuadra 8, Miraflores 15074</li>
-                    </ul>
-            </ul>
+        <section id="locals">
         </section>
+        <script>
+            const locationsData = [
+                { name: "Seattle", hour: "6am - 7pm", contact: "123-456-7890", address: "2901 3rd Ave #300, Seattle, WA 98121" },
+                { name: "Tokyo", hour: "6am - 7pm", contact: "222-222-2222", address: "1 Chome-1-2 Oshiage, Sumida City, Tokyo 131-8634" },
+                { name: "Dubai", hour: "6am - 7pm", contact: "333-333-3333", address: "1 Sheikh Mohammed bin Rashib Blvd - Dubai" },
+                { name: "Paris", hour: "6am - 7pm", contact: "444-444-4444", address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris" },
+                { name: "Lima", hour: "6am - 7pm", contact: "555-555-5555", address: "Ca. Gral. Borgoño cuadra 8, Miraflores 15074" }
+            ];
+
+            const localsContainer = document.getElementById('locals');
+
+            for (let i = 0; i < locationsData.length; i++) {
+                const location = locationsData[i];
+                const listItem = document.createElement('li');
+                const heading1 = document.createElement('h1');
+                heading1.textContent = location.name;
+                listItem.appendChild(heading1);
+                const detailList = document.createElement('ul');
+                const hoursOpen = document.createElement('li');
+                hoursOpen.textContent = `Hours Open: ${location.hour}`;
+                detailList.appendChild(hoursOpen);
+                const contact = document.createElement('li');
+                contact.textContent = `Contact Info: ${location.contact}`;
+                detailList.appendChild(contact);
+                const address = document.createElement('li');
+                address.textContent = `Address: ${location.address}`;
+                detailList.appendChild(address);
+                listItem.appendChild(detailList);
+                localsContainer.appendChild(listItem);
+            }
+        </script>
     </main>
     <footer>
         <p>© Pat's Salmon Cookies</p>
     </footer>
 </body>
+
 </html>
