@@ -70,6 +70,7 @@ ul ul {
 
 li {
     margin-bottom: 10px;
+    list-style: none;
 }
 
 .datosVenta {
@@ -95,6 +96,7 @@ footer {
 
 h1 {
     font-family: "Righteous", sans-serif;
+    margin-bottom: 10px;
 }
 
 table {
