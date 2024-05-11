@@ -28,6 +28,20 @@
     </header>
 
     <main>
+        <section id="newLocation" >
+            <h2>Add New Location</h2>
+            <form id="newLocalForm" onsubmit="sendForm(); return false;">
+                <label for="locationName">Name:</label>
+                <input type="text" id="locationName" name="locationName" required>
+                <label for="minCustomerPerHour">Min. Customer/Hour</label>
+                <input type="number" id="minCustomerPerHour" name="minCustomerPerHour" required>
+                <label for="maxCustomerPerHour">Max. Customer/Hour</label>
+                <input type="number" id="maxCustomerPerHour" name="maxCustomerPerHour" required>
+                <label for="AverageCustomerPerHour">Avg. Customer/Hour</label>
+                <input type="number" id="AverageCustomerPerHour" name="AverageCustomerPerHour" step="0.1" required>
+                <button id="btnAdd">ADD</button>
+            </form>
+        </section>
         <table>
             <thead>
                 <tr>
