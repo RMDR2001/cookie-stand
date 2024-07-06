@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     'use strict';
 
-    const attencionHours = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    const attencionHours = ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -66,19 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         const tfoot = document.getElementById('resumen');
-    const row = document.createElement('tr');
-    const nameCell = document.createElement('th');
-    nameCell.textContent = "Total por hora";
-    row.appendChild(nameCell);
-    for (let i = 0; i < totalCookiesPerHour.length; i++) {
-        const cell = document.createElement('td');
-        cell.textContent = totalCookiesPerHour[i];
-        row.appendChild(cell);
-    }
-    tfoot.appendChild(row);
-    const totalDailyCell = document.createElement('td');
-    totalDailyCell.textContent = totalDailyCookies;
-    row.appendChild(totalDailyCell);
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('th');
+        nameCell.textContent = "Total por hora";
+        row.appendChild(nameCell);
+        for (let i = 0; i < totalCookiesPerHour.length; i++) {
+            const cell = document.createElement('td');
+            cell.textContent = totalCookiesPerHour[i];
+            row.appendChild(cell);
+        }
+        tfoot.appendChild(row);
+        const totalDailyCell = document.createElement('td');
+        totalDailyCell.textContent = totalDailyCookies;
+        row.appendChild(totalDailyCell);
     }
 
     seattle.addTable();
@@ -89,4 +89,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     calculateTotalCookiesPerHour();
 
+    document.getElementById('newLocalForm').addEventListener('submit', sendForm);
+
+    function sendForm(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('locationName').value;
+        const min = parseInt(document.getElementById('minCustomerPerHour').value);
+        const max = parseInt(document.getElementById('maxCustomerPerHour').value);
+        const avg = parseFloat(document.getElementById('AverageCustomerPerHour').value);
+        
+        let newLocation = new Location(name, min, max, avg);
+        locations.push(newLocation);
+        newLocation.addTable();
+        
+        calculateTotalCookiesPerHour();
+        
+        document.getElementById('newLocalForm').reset();
+    }
 });
